@@ -1,4 +1,4 @@
-DEBUG_MODE: False
+DEBUG_MODE: False   # 开启后会缩短等待时间
 # 配置图像定位资源位置
 IMAGE_DIR: "src"
 # 配置应用程序
@@ -7,3 +7,5 @@ TING_EN_IMAGE_NAME: "ting_en.exe"
 # 配置钉钉机器人
 WEBHOOK: "https://oapi.dingtalk.com/robot/send?access_token=<YOUR_ACCESS_TOKEN>"
 SECRET: "<YOUR_SECRET>"
+# 执行的时间
+RUN_TIME: "9,14"

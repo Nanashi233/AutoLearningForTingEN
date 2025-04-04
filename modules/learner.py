@@ -2,8 +2,16 @@ import pyautogui as pg
 import time
 import os
 from .notifier import log_info, log_error, message_success, message_failed
+from .app_manager import run_app, kill_app
 
-def learn_english(image_dir):
+def learn_english(app_image_name,app_path,image_dir,debug_mode):
+
+    # 启动应用
+    kill_app(app_image_name)
+    time.sleep(20)
+    run_app(app_path)
+    time.sleep(20)
+
     # 开始学习
     try:
         site = pg.locateCenterOnScreen(os.path.join(image_dir, "stopped.png"), confidence=0.75)
@@ -15,8 +23,12 @@ def learn_english(image_dir):
         return
 
     # 学习过程
-    log_info("Learning in progress for 20 minutes...")
-    time.sleep(60 * 20)
+    if debug_mode:
+        log_info("Debug mode is on, short sleep for 10 second.")
+        time.sleep(10)
+    else:
+        log_info("Learning in progress for 20 minutes...")
+        time.sleep(60 * 20)
 
     # 结束学习
     try:
@@ -53,3 +65,7 @@ def learn_english(image_dir):
     except Exception as e:
         log_error(f"Unable to click [VIP]: {e}")
         message_failed("Unable to click [VIP]")
+
+    # 关闭应用
+    time.sleep(20)
+    kill_app(app_image_name)

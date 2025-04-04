@@ -10,6 +10,7 @@ def load_config():
 
 # 加载配置
 config = load_config()
+DEBUG_MODE = config["DEBUG_MODE"]
 TING_EN_APP_PATH = config["TING_EN_APP_PATH"]
 TING_EN_IMAGE_NAME = config["TING_EN_IMAGE_NAME"]
 WEBHOOK = config["WEBHOOK"]
@@ -21,15 +22,10 @@ initialize_notifier(WEBHOOK, SECRET)
 
 if __name__ == "__main__":
     while True:
+
         log_info("Starting new round...")
-        kill_app(TING_EN_IMAGE_NAME)
-        time.sleep(20)
-        run_app(TING_EN_APP_PATH)
-        time.sleep(20)
+        learn_english(TING_EN_IMAGE_NAME, TING_EN_APP_PATH, IMAGE_DIR, DEBUG_MODE)
+        log_info("Round completed.")
 
-        learn_english(IMAGE_DIR)
-
-        time.sleep(20)
-        kill_app(TING_EN_IMAGE_NAME)
         log_info("Next round will start in 12 hours.")
         time.sleep(60 * 60 * 12 - 60 * 20 - 66)

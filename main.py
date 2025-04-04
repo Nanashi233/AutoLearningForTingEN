@@ -23,12 +23,11 @@ initialize_notifier(WEBHOOK, SECRET)
 
 if __name__ == "__main__":
     while True:
-
         if is_time_to_run(RUN_TIME):
-            log_info("Time to run the task.")
-            log_info("Starting new round...")
+            log_info("Time to run the task. Starting new round...")
             learn_english(TING_EN_IMAGE_NAME, TING_EN_APP_PATH, IMAGE_DIR, DEBUG_MODE)
-            log_info("Round completed.")
+            log_info("Round completed.Waiting 45 minutes to ensure once an hour")
+            time.sleep(60 * 45)  # 每 45 分钟检查一次,保证一小时内只运行一次
         else:
             log_info("Not time yet, waiting...")
-            time.sleep(60 * 45)  # 每 45 分钟检查一次,保证一小时内只运行一次
+            

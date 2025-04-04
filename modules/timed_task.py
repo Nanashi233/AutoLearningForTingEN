@@ -1,5 +1,5 @@
 import datetime
-from notifier import message_failed
+from .notifier import message_failed
 
 def parse_schedule(schedule):
     """

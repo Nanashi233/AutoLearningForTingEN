@@ -29,5 +29,5 @@ if __name__ == "__main__":
             log_info("Round completed.Waiting 45 minutes to ensure once an hour")
             time.sleep(60 * 45)  # 每 45 分钟检查一次,保证一小时内只运行一次
         else:
-            log_info("Not time yet, waiting...")
-            
+            log_info("Not time yet.Waiting 45 minutes to ensure once an hour")
+            time.sleep(60 * 45)  # 每 45 分钟检查一次,保证一小时内只运行一次

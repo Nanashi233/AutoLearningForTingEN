@@ -94,28 +94,40 @@ def after_learning(app_image_name):
     return True, log
 
 def learn_english(app_image_name, app_path, image_dir, wait_time = 60 * 20):
+
+    total_success = True
+
     success, log = before_learning(app_image_name, app_path)
+    total_success = total_success and success
     if not success:
         message_failed(f"{log}")
-        return False
-    log_info(f"{log}")
+    else:
+        log_info(f"{log}")
 
-    success, log = learning(image_dir, wait_time)
-    if not success:
-        message_failed(f"{log}")
-        return False
-    log_info(f"{log}")
+    if total_success:
+        success, log = learning(image_dir, wait_time)
+        total_success = total_success and success
+        if not success:
+            message_failed(f"{log}")
+        else:
+            log_info(f"{log}")
 
-    success, log = check_completion(image_dir)
-    if not success:
-        message_failed(f"{log}")
-        return False
-    log_info(f"{log}")
+    if  total_success:
+        success, log = check_completion(image_dir)
+        total_success = total_success and success
+        if not success:
+            message_failed(f"{log}")
+        else:
+            log_info(f"{log}")
     
     success, log = after_learning(app_image_name)
+    total_success = total_success and success
     if not success:
         message_failed(f"{log}")
-        return False
-    log_info(f"{log}")
+    else:
+        log_info(f"{log}")
 
-    return True
+    if total_success:
+        return True
+    else:
+        return False

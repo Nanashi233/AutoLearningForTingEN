@@ -1,9 +1,0 @@
-TING_EN_APP_PATH: "C:\\Program Files (x86)\\ting_en\\ting_en.exe"
-WEBHOOK: "https://oapi.dingtalk.com/robot/send?access_token=<YOUR_ACCESS_TOKEN>"
-SECRET: "<YOUR_SECRET>"
-RUN_TIME: "9,14"
-
-# 请勿修改以下配置，除非你知道自己在做什么
-DEBUG_MODE: False
-IMAGE_DIR: "src"
-TING_EN_IMAGE_NAME: "ting_en.exe"

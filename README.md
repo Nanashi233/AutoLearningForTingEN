@@ -1,10 +1,9 @@
-# 这是一个自用的项目，不保证可用！本项目仍在修改中！
+# 这是一个自用的项目！
 
 # AutoLearningForTingEN
 
 ## 项目简介
-- `AutoLearningForTingEN` 是一个 Python 项目，用于24小时挂机自动完成《每日英语听力》打卡。
-- 该项目使用 pyautogui 进行图像匹配与点击，模仿人类操作。
+- `AutoLearningForTingEN` 是一个基于Python自动化的项目，用于24小时挂机自动完成《每日英语听力》打卡。
 - 本项目建议搭配 **远程本地多用户桌面** 使用。
 
 ## 环境要求

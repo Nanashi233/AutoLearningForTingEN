@@ -63,3 +63,7 @@ if __name__ == "__main__":
             log_info("Round completed. Waiting 45 minutes to ensure once an hour")
             time.sleep(60 * 45)
             continue
+        else:
+            log_info("Learning Task failed. Waiting 45 minutes to ensure once an hour")
+            time.sleep(60 * 45)
+            continue

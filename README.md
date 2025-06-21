@@ -21,12 +21,7 @@
    ```bash
    pip install -r requirements.txt
    ```
-4. 将 **default.yaml** 复制一份并重命名为 **config.yaml**
-5. 按需调整 **config.yaml** ：
-    - 如果你在安装时没有使用默认路径，请调整 **TING_EN_APP_PATH**
-    - 修改 **WEBHOOK** 与 **SECRET** 来实现钉钉机器人的通知推送（必要，否则无法正常运行）
-    - 修改 **RUN_TIME** 以指定程序运行的时间（时间之间用英文逗号隔开，不限定个数，例如 **RUN_TIME: "9,14"** 指每天的9点与14点各执行一次）
-6. 运行 **main.py** ：
+4. 运行 **main.py** ：
    ```bash
    python main.py
    ```

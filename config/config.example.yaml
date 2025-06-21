@@ -1,0 +1,8 @@
+DING_TALK_BOT_SECRET: null
+DING_TALK_BOT_WEBHOOK: null
+IMAGE_DIR: src
+LOG_LEVEL: INFO
+RUN_TIME: 9,14
+TING_EN_APP_PATH: C:\Program Files (x86)\ting_en\ting_en.exe
+TING_EN_IMAGE_NAME: ting_en.exe
+WAIT_TIME: 20

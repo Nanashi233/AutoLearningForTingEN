@@ -4,7 +4,13 @@ from dingtalkchatbot.chatbot import DingtalkChatbot
 bot = None
 
 def initialize_notifier(webhook, secret, log_level="INFO"):
-    """初始化通知器"""
+    """
+    初始化钉钉通知机器人，并设置日志级别。
+
+    :param webhook: str，钉钉机器人Webhook地址
+    :param secret: str，钉钉机器人安全密钥
+    :param log_level: str，日志级别（如"INFO"、"DEBUG"等）
+    """
     global bot
     bot = DingtalkChatbot(webhook, secret=secret)
 
@@ -27,7 +33,11 @@ logging.basicConfig(
 #     logging.debug(message)
 
 def log_info(message):
-    """记录 INFO 级别日志"""
+    """
+    记录 INFO 级别日志。
+
+    :param message: str，日志内容
+    """
     logging.info(message)
 
 # def log_warning(message):
@@ -35,7 +45,11 @@ def log_info(message):
 #     logging.warning(message)
 
 def log_error(message):
-    """记录 ERROR 级别日志"""
+    """
+    记录 ERROR 级别日志。
+
+    :param message: str，日志内容
+    """
     logging.error(message)
 
 # def log_critical(message):
@@ -43,11 +57,19 @@ def log_error(message):
 #     logging.critical(message)
 
 def message_success(message):
-    """发送成功消息"""
+    """
+    发送成功消息到钉钉，并记录日志。
+
+    :param message: str，发送的消息内容
+    """
     logging.info(f"{message}, sending message")
     bot.send_text(msg=message, is_at_all=False)
 
 def message_failed(message):
-    """发送失败消息"""
+    """
+    发送失败消息到钉钉，并记录日志。
+
+    :param message: str，发送的消息内容
+    """
     logging.error(f"{message}, sending message")
     bot.send_text(msg=message, is_at_all=True)

@@ -2,3 +2,5 @@ config/config.yaml
 config/config.yaml.bak
 modules/__pycache__
 TingEN.log
+.conda
+.idea

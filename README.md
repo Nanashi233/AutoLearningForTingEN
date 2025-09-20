@@ -1,5 +1,3 @@
-# 这是一个自用的项目！
-
 # AutoLearningForTingEN
 
 ## 项目简介
